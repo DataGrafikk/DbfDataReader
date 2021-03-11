@@ -29,7 +29,9 @@ namespace DbfDataReader
             {
                 var block = BinaryReader.ReadString(DefaultBlockSize, CurrentEncoding);
                 if ((block == null) || (block.Length == 0))
+                {
                     break;
+                }
                 stringBuilder.Append(block);
 
                 if (block.Length >= DefaultBlockSize) finished = true;
